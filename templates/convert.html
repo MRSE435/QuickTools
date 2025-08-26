@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Unit Converter</h2>
+  <form method="post" class="form-grid">
+    <label>Type
+      <select name="ctype" required>
+        <option value="temp">Temperature (°C)</option>
+        <option value="length">Length (meters)</option>
+        <option value="weight">Weight (kg)</option>
+      </select>
+    </label>
+    <label>Value
+      <input type="number" name="value" step="any" required placeholder="Enter a number">
+    </label>
+    <button class="btn" type="submit">Convert</button>
+  </form>
+  {% if result %}
+    <div class="result">
+      <pre>{{ result | tojson(indent=2) }}</pre>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

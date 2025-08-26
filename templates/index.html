@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="grid">
+  <a class="card" href="{{ url_for('text_tool') }}">
+    <h2>📝 Text Analyzer</h2>
+    <p>Word & sentence counts, reading time, top words, letter freq.</p>
+  </a>
+  <a class="card" href="{{ url_for('convert') }}">
+    <h2>🔁 Unit Converter</h2>
+    <p>Celsius, length, and weight conversions.</p>
+  </a>
+  <a class="card" href="{{ url_for('qr') }}">
+    <h2>🔳 QR Code</h2>
+    <p>Create QR codes for links and text.</p>
+  </a>
+  <a class="card" href="{{ url_for('image_tool') }}">
+    <h2>🖼️ Image Resizer</h2>
+    <p>Resize images entirely in memory. No uploads saved.</p>
+  </a>
+</section>
+{% endblock %}

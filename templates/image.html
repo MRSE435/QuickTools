@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Image Resizer</h2>
+  <form method="post" enctype="multipart/form-data" class="form-grid">
+    <label>Image
+      <input type="file" name="image" accept="image/*" required>
+    </label>
+    <label>Width (px)
+      <input type="number" name="width" min="1" placeholder="e.g., 800">
+    </label>
+    <label>Height (px)
+      <input type="number" name="height" min="1" placeholder="e.g., 600">
+    </label>
+    <button class="btn" type="submit">Resize & Download</button>
+  </form>
+  <p class="muted">Leave width or height empty to keep aspect ratio.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Text Analyzer</h2>
+  <form method="post">
+    <textarea name="text" rows="8" placeholder="Paste or type text here..." required>{{ text }}</textarea>
+    <button class="btn" type="submit">Analyze</button>
+  </form>
+  {% if result %}
+  <div class="result">
+    <div class="stats">
+      <div><strong>Characters:</strong> {{ result.chars }}</div>
+      <div><strong>Words:</strong> {{ result.words }}</div>
+      <div><strong>Sentences:</strong> {{ result.sentences }}</div>
+      <div><strong>Avg Word Len:</strong> {{ result.avg_wlen }}</div>
+      <div><strong>Reading Time (min):</strong> {{ result.reading_time_min }}</div>
+    </div>
+    <h3>Top Words</h3>
+    <ul>
+      {% for w,c in result.top_words %}
+        <li>{{ w }} — {{ c }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Letter Frequency</h3>
+    <ul class="wrap">
+      {% for k,v in result.letters.items() %}
+        <li>{{ k }}: {{ v }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

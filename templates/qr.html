@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>QR Code Generator</h2>
+  <form method="post">
+    <input type="text" name="data" placeholder="Enter text or URL" required>
+    <button class="btn" type="submit">Generate & Download</button>
+  </form>
+  <p class="muted">No data is stored. The QR image is generated on-the-fly.</p>
+</section>
+{% endblock %}
